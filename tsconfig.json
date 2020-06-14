@@ -16,7 +16,11 @@
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",
+    "inlineSourceMap": true,
+    "declaration": false,
+    "removeComments": false,
     "resolveJsonModule": true,
+    "noImplicitAny": false,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
@@ -28,5 +32,8 @@
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
