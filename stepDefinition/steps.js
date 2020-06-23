@@ -38,6 +38,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 exports.__esModule = true;
 var cucumber_1 = require("cucumber");
 var protractor_1 = require("protractor");
+var addUser_1 = require("../pageObject/addUser");
+var addUser = new addUser_1.AddUser();
 cucumber_1.Given(/^Navigate to User Management Page$/, function () { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -51,56 +53,82 @@ cucumber_1.Given(/^Navigate to User Management Page$/, function () { return __aw
         }
     });
 }); });
-cucumber_1.When(/^User provides firstname lastname email ([^"]*) dob ([^"]*)$/, function (gender, businessUnit) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, protractor_1.element(protractor_1.by.css('[class*="add-user-btn"]')).click()];
-            case 1:
-                _a.sent();
-                return [4 /*yield*/, protractor_1.element(protractor_1.by.id('firstname')).sendKeys('demo')];
-            case 2:
-                _a.sent();
-                return [4 /*yield*/, protractor_1.element(protractor_1.by.id('lastname')).sendKeys('test')];
-            case 3:
-                _a.sent();
-                return [4 /*yield*/, protractor_1.element(protractor_1.by.id('email')).sendKeys('demo123@test.com')];
-            case 4:
-                _a.sent();
-                return [4 /*yield*/, protractor_1.element(protractor_1.by.id('DOB')).clear().then(function () {
-                        protractor_1.element(protractor_1.by.id('DOB')).sendKeys('04101993');
-                    })];
-            case 5:
-                _a.sent();
-                return [4 /*yield*/, protractor_1.element(protractor_1.by.css("[name=\"gender\" ][ value=\"" + gender + "\"]")).click()];
-            case 6:
-                _a.sent();
-                return [4 /*yield*/, protractor_1.element(protractor_1.by.id('businessunit')).click().then(function () {
-                        protractor_1.element(protractor_1.by.xpath("//li[@data-value=\"" + businessUnit + "\"]")).click();
-                    })];
-            case 7:
-                _a.sent();
-                return [2 /*return*/];
-        }
+cucumber_1.When('User provides {string} {string} {string}', function (firstname, lastname, email) {
+    return __awaiter(this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, addUser.addUserBtn.click()];
+                case 1:
+                    _a.sent();
+                    return [4 /*yield*/, addUser.firstname.sendKeys("" + firstname)];
+                case 2:
+                    _a.sent();
+                    return [4 /*yield*/, addUser.lastname.sendKeys("" + lastname)];
+                case 3:
+                    _a.sent();
+                    return [4 /*yield*/, addUser.email.sendKeys("" + email)];
+                case 4:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
     });
-}); });
+});
+cucumber_1.Then('select {string} {string}', function (gender, businessUnit) {
+    return __awaiter(this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, protractor_1.element(protractor_1.by.css("[value=\"" + gender + "\"]")).click()];
+                case 1:
+                    _a.sent();
+                    return [4 /*yield*/, addUser.businessUnit.click().then(function () {
+                            protractor_1.element(protractor_1.by.xpath("//li[@data-value=\"" + businessUnit + "\"]")).click();
+                        })];
+                case 2:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    });
+});
+cucumber_1.Then('select DOB', function () {
+    return __awaiter(this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, addUser.calendarIcon.click().then(function () {
+                        return __awaiter(this, void 0, void 0, function () {
+                            return __generator(this, function (_a) {
+                                protractor_1.browser.actions().mouseMove(addUser.dob).click().perform();
+                                return [2 /*return*/];
+                            });
+                        });
+                    })];
+                case 1:
+                    _a.sent();
+                    protractor_1.browser.actions().mouseMove(addUser.calendarIcon).click().perform();
+                    return [2 /*return*/];
+            }
+        });
+    });
+});
 cucumber_1.Then(/^click on save and close button$/, function () { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, protractor_1.element(protractor_1.by.id("isAdmin")).click()];
+            case 0: return [4 /*yield*/, addUser.saveAndCloseBtn.isDisplayed().then(function () {
+                    addUser.saveAndCloseBtn.click();
+                })];
             case 1:
                 _a.sent();
                 return [2 /*return*/];
         }
     });
 }); });
-cucumber_1.Then(/^Enable Admin button$/, function () { return __awaiter(void 0, void 0, void 0, function () {
+cucumber_1.Then(/^Disable Admin button$/, function () { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, protractor_1.element(protractor_1.by.id("isAdmin")).click()];
-            case 1:
-                _a.sent();
-                return [2 /*return*/];
+        if (addUser.adminBtn.isEnabled()) {
+            addUser.adminBtn.click();
         }
+        return [2 /*return*/];
     });
 }); });
 cucumber_1.Then(/^User added successfully$/, function () { return __awaiter(void 0, void 0, void 0, function () {
