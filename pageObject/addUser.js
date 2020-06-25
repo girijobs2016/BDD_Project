@@ -11,6 +11,7 @@ var AddUser = /** @class */ (function () {
         this.businessUnit = protractor_1.element(protractor_1.by.id('businessunit'));
         this.calendarIcon = protractor_1.element(protractor_1.by.css('button[class*="MuiIconButton-root"]'));
         this.dob = protractor_1.element(protractor_1.by.xpath("//*[@class=\"MuiPickersCalendar-week\"][1]/div[5]/button"));
+        this.currentDate = protractor_1.element(protractor_1.by.css('[class*="MuiPickersDay-daySelected"]'));
         this.saveAndCloseBtn = protractor_1.element(protractor_1.by.xpath("//*[contains(text(),'Save and close')]"));
         this.adminBtn = protractor_1.element(protractor_1.by.id("isAdmin"));
     }

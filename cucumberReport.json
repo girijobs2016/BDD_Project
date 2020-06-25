@@ -8,10 +8,10 @@
     "uri": "features\\addUser.feature",
     "elements": [
       {
-        "id": "add-user-to-user-management;add-user-as-non-admin",
+        "id": "add-user-to-user-management;adding-user-to-user-management-as-general-user",
         "keyword": "Scenario",
-        "line": 15,
-        "name": "Add User as Non Admin",
+        "line": 11,
+        "name": "Adding User to user-management as General User",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -29,356 +29,62 @@
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 3,
-            "name": "Navigate to User Management Page",
+            "line": 4,
+            "name": "User Navigates directly to user-management page and click add user",
             "match": {
-              "location": "stepDefinition\\steps.js:43"
+              "location": "stepDefinition\\steps.js:44"
             },
             "result": {
               "status": "passed",
-              "duration": 3393000000
+              "duration": 3854000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
+            "line": 5,
+            "name": "User provides basic details like firstname as \"demo\", lastname as \"test\" and email as \"demo123@gmail.com\"",
+            "match": {
+              "location": "stepDefinition\\steps.js:69"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1407000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "User disable admin flag indicator",
+            "match": {
+              "location": "stepDefinition\\steps.js:85"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 126000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
             "line": 7,
-            "name": "User provides \"demo1\" \"test1\" \"demo123@gmail.com\"",
+            "name": "User selects the required \"male\" ,\"IT Admin\", DOB and save the details",
             "match": {
-              "location": "stepDefinition\\steps.js:56"
+              "location": "stepDefinition\\steps.js:95"
             },
             "result": {
               "status": "passed",
-              "duration": 1996000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 8,
-            "name": "select \"male\" \"IT Admin\"",
-            "match": {
-              "location": "stepDefinition\\steps.js:77"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 396000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 9,
-            "name": "select DOB",
-            "match": {
-              "location": "stepDefinition\\steps.js:94"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 559000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 10,
-            "name": "Disable Admin button",
-            "match": {
-              "location": "stepDefinition\\steps.js:126"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 11,
-            "name": "click on save and close button",
-            "match": {
-              "location": "stepDefinition\\steps.js:114"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 739000000
+              "duration": 1988000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 12,
-            "name": "User added successfully",
-            "match": {
-              "location": "stepDefinition\\steps.js:134"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "match": {
-              "location": "stepDefinition\\hooks.js:45"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4000000
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "match": {
-              "location": "node_modules\\protractor-cucumber-framework\\lib\\resultsCapturer.js:27"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2000000
-            }
-          }
-        ]
-      },
-      {
-        "id": "add-user-to-user-management;add-user-as-non-admin",
-        "keyword": "Scenario",
-        "line": 16,
-        "name": "Add User as Non Admin",
-        "tags": [],
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "match": {
-              "location": "stepDefinition\\hooks.js:41"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 3,
-            "name": "Navigate to User Management Page",
-            "match": {
-              "location": "stepDefinition\\steps.js:43"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 349000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 7,
-            "name": "User provides \"demo2\" \"test2\" \"demo234@gmail.com\"",
-            "match": {
-              "location": "stepDefinition\\steps.js:56"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1602000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
             "line": 8,
-            "name": "select \"female\" \"Finance\"",
+            "name": "User added successfully to user-management",
             "match": {
-              "location": "stepDefinition\\steps.js:77"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 381000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 9,
-            "name": "select DOB",
-            "match": {
-              "location": "stepDefinition\\steps.js:94"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 659000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 10,
-            "name": "Disable Admin button",
-            "match": {
-              "location": "stepDefinition\\steps.js:126"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 11,
-            "name": "click on save and close button",
-            "match": {
-              "location": "stepDefinition\\steps.js:114"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 783000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 12,
-            "name": "User added successfully",
-            "match": {
-              "location": "stepDefinition\\steps.js:134"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "match": {
-              "location": "stepDefinition\\hooks.js:45"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2000000
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "match": {
-              "location": "node_modules\\protractor-cucumber-framework\\lib\\resultsCapturer.js:27"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          }
-        ]
-      },
-      {
-        "id": "add-user-to-user-management;add-user-as-non-admin",
-        "keyword": "Scenario",
-        "line": 17,
-        "name": "Add User as Non Admin",
-        "tags": [],
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "match": {
-              "location": "stepDefinition\\hooks.js:41"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 3,
-            "name": "Navigate to User Management Page",
-            "match": {
-              "location": "stepDefinition\\steps.js:43"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 523000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 7,
-            "name": "User provides \"demo3\" \"test3\" \"demo345@gmail.com\"",
-            "match": {
-              "location": "stepDefinition\\steps.js:56"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1856000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 8,
-            "name": "select \"other\" \"Development\"",
-            "match": {
-              "location": "stepDefinition\\steps.js:77"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 416000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 9,
-            "name": "select DOB",
-            "match": {
-              "location": "stepDefinition\\steps.js:94"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 734000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 10,
-            "name": "Disable Admin button",
-            "match": {
-              "location": "stepDefinition\\steps.js:126"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 11,
-            "name": "click on save and close button",
-            "match": {
-              "location": "stepDefinition\\steps.js:114"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 751000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 12,
-            "name": "User added successfully",
-            "match": {
-              "location": "stepDefinition\\steps.js:134"
+              "location": "stepDefinition\\steps.js:133"
             },
             "result": {
               "status": "passed",
@@ -393,7 +99,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4000000
+              "duration": 11000000
             }
           },
           {
@@ -410,10 +116,10 @@
         ]
       },
       {
-        "id": "add-user-to-user-management;add-user-as-admin",
+        "id": "add-user-to-user-management;adding-user-to-user-management-as-general-user",
         "keyword": "Scenario",
-        "line": 27,
-        "name": "Add user as Admin",
+        "line": 12,
+        "name": "Adding User to user-management as General User",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -431,75 +137,265 @@
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 3,
-            "name": "Navigate to User Management Page",
+            "line": 4,
+            "name": "User Navigates directly to user-management page and click add user",
             "match": {
-              "location": "stepDefinition\\steps.js:43"
+              "location": "stepDefinition\\steps.js:44"
             },
             "result": {
               "status": "passed",
-              "duration": 1177000000
+              "duration": 531000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 20,
-            "name": "User provides \"demo4\" \"test4\" \"demo456@gmail.com\"",
+            "line": 5,
+            "name": "User provides basic details like firstname as \"demo\", lastname as \"test\" and email as \"demo123@gmail.com\"",
             "match": {
-              "location": "stepDefinition\\steps.js:56"
+              "location": "stepDefinition\\steps.js:69"
             },
             "result": {
               "status": "passed",
-              "duration": 1847000000
+              "duration": 1320000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 21,
-            "name": "select \"male\" \"IT Admin\"",
+            "line": 6,
+            "name": "User disable admin flag indicator",
             "match": {
-              "location": "stepDefinition\\steps.js:77"
+              "location": "stepDefinition\\steps.js:85"
             },
             "result": {
               "status": "passed",
-              "duration": 304000000
+              "duration": 127000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 22,
-            "name": "select DOB",
+            "line": 7,
+            "name": "User selects the required \"female\" ,\"Finance\", DOB and save the details",
             "match": {
-              "location": "stepDefinition\\steps.js:94"
+              "location": "stepDefinition\\steps.js:95"
             },
             "result": {
               "status": "passed",
-              "duration": 717000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 23,
-            "name": "click on save and close button",
-            "match": {
-              "location": "stepDefinition\\steps.js:114"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 552000000
+              "duration": 2061000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 24,
-            "name": "User added successfully",
+            "line": 8,
+            "name": "User added successfully to user-management",
             "match": {
-              "location": "stepDefinition\\steps.js:134"
+              "location": "stepDefinition\\steps.js:133"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "stepDefinition\\hooks.js:45"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules\\protractor-cucumber-framework\\lib\\resultsCapturer.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "add-user-to-user-management;adding-user-to-user-management-as-general-user",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "Adding User to user-management as General User",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "stepDefinition\\hooks.js:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User Navigates directly to user-management page and click add user",
+            "match": {
+              "location": "stepDefinition\\steps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 605000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "User provides basic details like firstname as \"demo\", lastname as \"test\" and email as \"demo123@gmail.com\"",
+            "match": {
+              "location": "stepDefinition\\steps.js:69"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1521000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "User disable admin flag indicator",
+            "match": {
+              "location": "stepDefinition\\steps.js:85"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 122000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "User selects the required \"other\" ,\"Development\", DOB and save the details",
+            "match": {
+              "location": "stepDefinition\\steps.js:95"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1999000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "User added successfully to user-management",
+            "match": {
+              "location": "stepDefinition\\steps.js:133"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "stepDefinition\\hooks.js:45"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules\\protractor-cucumber-framework\\lib\\resultsCapturer.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "add-user-to-user-management;adding-user-to-user-management-as-admin-user",
+        "keyword": "Scenario",
+        "line": 22,
+        "name": "Adding User to user-management as admin User",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "stepDefinition\\hooks.js:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 16,
+            "name": "User Navigates directly to user-management page and click add user",
+            "match": {
+              "location": "stepDefinition\\steps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 648000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "User provides basic details like firstname as \"demo\", lastname as \"test\" and email as \"demo123@gmail.com\"",
+            "match": {
+              "location": "stepDefinition\\steps.js:69"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1494000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "User selects the required \"male\" ,\"IT Admin\", DOB and save the details",
+            "match": {
+              "location": "stepDefinition\\steps.js:95"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1862000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "User added successfully to user-management",
+            "match": {
+              "location": "stepDefinition\\steps.js:133"
             },
             "result": {
               "status": "passed",
@@ -514,7 +410,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2000000
+              "duration": 8000000
             }
           },
           {
@@ -525,7 +421,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 2000000
             }
           }
         ]

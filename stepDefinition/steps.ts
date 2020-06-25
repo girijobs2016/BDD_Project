@@ -1,47 +1,42 @@
 import { Given, When, Then } from 'cucumber';
-import { browser, element, by } from 'protractor';
+import { browser, element, by, ExpectedConditions } from 'protractor';
 import { AddUser } from '../pageObject/addUser';
+import { expect } from 'chai';
 
 const addUser = new AddUser();
 
-Given(/^Navigate to User Management Page$/, async () => {
+Given(/^User Navigates directly to user-management page and click add user$/, async() =>  {
     await browser.waitForAngularEnabled(false);
     await browser.get('http://localhost:3000/');
+    expect(await browser.getTitle()).to.equal('User management');
+    expect(await addUser.addUserBtn.getLocation()).to.contain({x: 1190.140625,y: 20});
+    await addUser.addUserBtn.click();
 });
 
-When('User provides {string} {string} {string}', async function (firstname, lastname, email) {
-    await addUser.addUserBtn.click();
+When(/^User provides basic details like firstname as \"(.*)\", lastname as \"(.*)\" and email as \"(.*)\"$/, async (firstname, lastname, email) => {
     await addUser.firstname.sendKeys(`${firstname}`);
     await addUser.lastname.sendKeys(`${lastname}`);
     await addUser.email.sendKeys(`${email}`);
 });
 
-Then('select {string} {string}', async function (gender, businessUnit) {
+When(/^User disable admin flag indicator$/, async () => {
+    await addUser.adminBtn.click();
+});
+
+When(/^User selects the required \"(.*)\" ,\"(.*)\", DOB and save the details$/, async (gender, businessUnit) =>{
     await element(by.css(`[value="${gender}"]`)).click();
-    await addUser.businessUnit.click().then(function () {
-        element(by.xpath(`//li[@data-value="${businessUnit}"]`)).click();
-    });
+    await addUser.businessUnit.click();
+    await element(by.xpath(`//li[@data-value="${businessUnit}"]`)).click();
+    await addUser.calendarIcon.click();
+    await browser.actions().mouseMove(addUser.dob).perform();
+    await browser.wait(ExpectedConditions.elementToBeClickable(addUser.dob),5000);
+    await addUser.dob.click();
+    await browser.actions().mouseMove(addUser.calendarIcon).click().perform();
+    expect(addUser.dob).to.not.equal(addUser.currentDate);
+    await browser.wait(ExpectedConditions.elementToBeClickable(addUser.saveAndCloseBtn),5000);
+    await addUser.saveAndCloseBtn.click();
 });
 
-Then('select DOB', async function () {
-    await addUser.calendarIcon.click().then( async function(){
-        browser.actions().mouseMove(addUser.dob).click().perform()      
-    })
-    browser.actions().mouseMove(addUser.calendarIcon).click().perform();
-});
-
-Then(/^click on save and close button$/, async () => {
-    await addUser.saveAndCloseBtn.isDisplayed().then(function(){
-        addUser.saveAndCloseBtn.click();
-    })
-});
-
-Then(/^Disable Admin button$/, async () => {
-    if(addUser.adminBtn.isEnabled()){
-       addUser.adminBtn.click();
-    }
-});
-
-Then(/^User added successfully$/, async () => {
-    console.log('User added successfully')
-});
+Then(/^User added successfully to user-management$/, async () => {
+    await console.log('User added successfully to user-management');
+ });

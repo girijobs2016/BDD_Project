@@ -1,27 +1,23 @@
 Feature: Add user to User Management
-    Background:
-        Given Navigate to User Management Page
-        
-
-    Scenario Outline: Add User as Non Admin
-        When User provides "<firstname>" "<lastname>" "<email>"
-        And  select "<gender>" "<businessUnit>"
-        And select DOB
-        And Disable Admin button
-        And click on save and close button
-        Then User added successfully
+    
+    Scenario Outline: Adding User to user-management as General User
+        Given User Navigates directly to user-management page and click add user
+        When User provides basic details like firstname as "demo", lastname as "test" and email as "demo123@gmail.com"
+        And User disable admin flag indicator
+        And  User selects the required "<gender>" ,"<businessUnit>", DOB and save the details
+        Then User added successfully to user-management
         Examples:
-            | firstname | lastname | email | gender | businessUnit |
-            | demo1 | test1 | demo123@gmail.com | male | IT Admin | 
-            | demo2 | test2 | demo234@gmail.com | female | Finance | 
-            | demo3 | test3 | demo345@gmail.com | other | Development | 
+            | gender | businessUnit |
+            | male | IT Admin | 
+            | female | Finance | 
+            | other | Development | 
 
-    Scenario Outline: Add user as Admin
-        When User provides "<firstname>" "<lastname>" "<email>"
-        And  select "<gender>" "<businessUnit>"
-        And select DOB
-        And click on save and close button
-        Then User added successfully
+    Scenario Outline: Adding User to user-management as admin User
+        Given User Navigates directly to user-management page and click add user
+        When User provides basic details like firstname as "demo", lastname as "test" and email as "demo123@gmail.com"
+        And  User selects the required "<gender>" ,"<businessUnit>", DOB and save the details
+        Then User added successfully to user-management
         Examples:
-            | firstname | lastname | email | gender | businessUnit |
-            | demo4 | test4 | demo456@gmail.com | male | IT Admin |
+            | gender | businessUnit |
+            | male | IT Admin | 
+
