@@ -1,10 +1,9 @@
 "use strict";
 exports.__esModule = true;
-exports.AddUser = void 0;
+exports.AddUserPage = void 0;
 var protractor_1 = require("protractor");
-var AddUser = /** @class */ (function () {
-    function AddUser() {
-        this.addUserBtn = protractor_1.element(protractor_1.by.css('[class*="add-user-btn"]'));
+var AddUserPage = /** @class */ (function () {
+    function AddUserPage() {
         this.firstname = protractor_1.element(protractor_1.by.id('firstname'));
         this.lastname = protractor_1.element(protractor_1.by.id('lastname'));
         this.email = protractor_1.element(protractor_1.by.id('email'));
@@ -15,6 +14,6 @@ var AddUser = /** @class */ (function () {
         this.saveAndCloseBtn = protractor_1.element(protractor_1.by.xpath("//*[contains(text(),'Save and close')]"));
         this.adminBtn = protractor_1.element(protractor_1.by.id("isAdmin"));
     }
-    return AddUser;
+    return AddUserPage;
 }());
-exports.AddUser = AddUser;
+exports.AddUserPage = AddUserPage;
